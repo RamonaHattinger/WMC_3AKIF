@@ -1,0 +1,186 @@
+:root {
+    --pulse-color-page-background: #eafaf1;
+    --pulse-color-card-background: #d6dae5;
+    --pulse-color-faq-background: #fcfcfc;
+    --pulse-color-headings: #00ad6a;
+    --pulse-color-buttons: #1fe374;
+    --pulse-color-dark: #080c16;
+
+}
+
+body {
+    color: var(--pulse-color-dark);
+    background-color: var(--pulse-color-page-background);
+    font-size: 14px;
+    padding: 3rem;
+    margin: 3rem;
+}
+
+#main{
+    background: var(--pulse-color-page-background)
+}
+
+ul  {
+    list-style-type: none;
+}
+
+.navbar{
+    display: flex;
+    color: var(--pulse-color-headings);
+    background-color: var(--pulse-color-page-background);
+    font-size: smaller;
+    font-weight:700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    
+
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+    flex-wrap: wrap;
+}
+
+nav ul li{
+    padding: 8px;
+}
+
+
+
+nav ul li a {
+    text-decoration: none; 
+    color: inherit; 
+    border: 2px solid transparent;
+    padding:5px 10px;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: var(--pulse-color-buttons);
+    border-color: var(--pulse-color-buttons);
+}
+
+nav ul li a:active{
+    color: #080c16;
+}
+
+.active{
+    color: #080c16;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{
+    text-align: center;
+    font-size: smaller;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+}
+
+p{
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 2px;
+    margin: 0;
+}
+
+#card1 {
+    padding: 2rem;
+}
+
+#card1 h3 {
+    color: var(--pulse-color-headings);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+
+}
+
+#card1 ul {
+    list-style-type: disc;
+    font-size: smaller;
+    padding-left: 15px;
+}
+
+#card1 p {
+    font-size: smaller;
+}
+
+#card2{
+   
+    border: 2px solid var(--pulse-color-headings);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 3;
+    background-color: var(--pulse-color-card-background);
+}
+
+
+
+
+#card2 h3 {
+    background-color: var(--pulse-color-headings);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+   
+}
+
+#card2 h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pulse-color-headings);
+    padding-bottom: 0rem;
+ 
+ }
+#card2 h4 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#card2 button{
+    background-color: var(--pulse-color-buttons);
+    border-color: var(--pulse-color-buttons);
+    border-style: solid;
+    font-weight: 700;
+    padding: 4px 8px;
+    margin-bottom: 1rem;
+}
+
+#card2 ul li:before {
+    content: '✓';
+    color: var(--pulse-color-headings);
+  }
