@@ -337,17 +337,117 @@ h4.listhead {
 
 footer{
     background-color:  var(--pulse-color-dark);
+    padding-left: 8rem;
+    padding-right: 3rem;
+}
+
+.navi{
+    background-color:  var(--pulse-color-dark);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+footer aside{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: left;
+    align-items: flex-start;
+    margin-top: 3rem;
+    
+}
+
+aside img{
+    float: left;
+    
 }
 
 footer button{
     background-color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
     border-style: solid;
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 4px 20px;
     margin-bottom: 1rem;
+    margin-left: 2rem;   
 }
 
-footer div{
-    color: var(--pulse-color-headings);
+footer button:hover{
+    border-style: solid;
+    border-color: white;
 }
+
+footer button a{
+    color: black;
+}
+
+footer button a:hover{
+    text-decoration: none;
+        color: white;
+}
+
+#list {
+    list-style-type: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--pulse-color-headings);
+    width: 50%;
+    display: flex;
+    margin-top: 3rem;
+    margin-right: 3rem;
+
+}
+
+#list ul li{
+    padding: 0.3rem;
+}
+
+.first{
+    color: white;
+    font-weight: 600;
+}
+#footnote {
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 0rem;
+}
+
+#footnote a {
+    text-decoration: none; 
+    color: inherit; 
+    border: 2px solid transparent;
+    
+}
+
+#footnote a:hover{
+    text-decoration: underline;
+   
+}
+
+#footnote button{
+    color: white;
+    border: solid white;
+    font-weight: 700;
+    padding: 8px 8px;
+    margin-bottom: 1rem;
+    
+}
+
+#footnote button a:hover{
+    text-decoration: none;
+    color: #080c16;
+}
+
