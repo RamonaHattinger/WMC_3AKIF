@@ -9,15 +9,18 @@
 }
 
 body {
+    font-family: 'Work Sans';
     color: var(--pulse-color-dark);
     background-color: var(--pulse-color-page-background);
     font-size: 14px;
-    padding: 3rem;
-    margin: 3rem;
+    padding-top: 3rem;
+  
 }
 
 #main{
-    background: var(--pulse-color-page-background)
+    background: solid var(--pulse-color-page-background);
+    padding: 3rem;
+    border-bottom: solid var(--pulse-color-card-background);
 }
 
 ul  {
@@ -81,12 +84,12 @@ nav ul li a:active{
 
 h1{
     text-align: center;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 h2{
     text-align: center;
-    font-size: smaller;
+    font-size: 0.75rem;
     font-weight: 400;
     padding-top: 1rem;
     padding-bottom: 2rem;
@@ -107,14 +110,15 @@ p{
 }
 
 #card1 {
-    padding: 2rem;
+    padding: 3rem;
+    width: 33%;
 }
 
 #card1 h3 {
     color: var(--pulse-color-headings);
     font-size: 1rem;
     font-weight: 700;
-    padding: 0;
+    padding-bottom: 1rem;
     margin: 0;
     text-align: justify;
 
@@ -122,13 +126,14 @@ p{
 
 #card1 ul {
     list-style-type: disc;
-    font-size: smaller;
+    font-size: 0.75rem;
     padding-left: 15px;
 }
 
-#card1 p {
-    font-size: smaller;
+#card1 p{
+    font-size: 0.75rem;
 }
+
 
 #card2{
    
@@ -141,8 +146,9 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 3;
-    background-color: var(--pulse-color-card-background);
+    background-color: white;
+    padding-bottom: 4rem;
+    width: 33%;
 }
 
 
@@ -151,36 +157,131 @@ p{
 #card2 h3 {
     background-color: var(--pulse-color-headings);
     color: white;
-    font-size: 1rem;
+    font-size: 0.75rem;
     text-align: center;
-    padding: 0 1rem;
+    width: 100%;
+    margin: 0;
    
 }
 
 #card2 h2 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 1000;
     color: var(--pulse-color-headings);
-    padding-bottom: 0rem;
- 
+    padding-bottom: 1rem;
+    padding-top: 0;
+    margin: 0;
  }
-#card2 h4 {
-    text-align: center;
-    font-weight: 400;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
 
-#card2 button{
+ #card2 button{
     background-color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
     border-style: solid;
     font-weight: 700;
-    padding: 4px 8px;
+    padding: 4px 20px;
     margin-bottom: 1rem;
 }
 
-#card2 ul li:before {
+h4.card {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+h4.listhead {
+    font-size: x-small;
+    text-align: center;
+    padding-top: 8px;
+}
+
+
+
+#card2 ul{
+    padding-left: 12px;
+    padding-right: 16px;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.checkmark li{
+    position: relative;
+    padding-left: 16px;
+    padding-bottom: 1rem;
+    left: 1;
+}
+
+.checkmark li::before{
     content: '✓';
     color: var(--pulse-color-headings);
-  }
+    position: absolute;
+    left: 0;
+}
+
+#card3 {
+    background-color: white;
+    border: solid var(--pulse-color-card-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    width: 33%;
+}
+
+#card3 h5{
+    text-align:center;
+    font-size: 0.75rem;
+    padding: 1rem;
+    background-color:#eaeef7;
+    border-bottom: solid var(--pulse-color-card-background);
+}
+
+#card3 h3{
+    color: var(--pulse-color-headings);
+}
+
+#card3 button{
+    background-color: var(--pulse-color-buttons);
+    border-color: var(--pulse-color-buttons);
+    border-style: solid;
+    font-weight: 700;
+    padding: 4px 20px;
+    margin-bottom: 1rem;
+}
+
+#card3 ul{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+.quote
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+}
+
+.quote q{
+    display: inline;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+.quote p{
+    color: var(--pulse-color-headings);
+    font-size: 0.6rem;
+    font-weight: 800;
+}
+
+#faq{
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+}
