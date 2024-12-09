@@ -14,25 +14,25 @@ body {
     background-color: var(--pulse-color-page-background);
     font-size: 14px;
     padding-top: 3rem;
-  
+
 }
 
-#main{
+#main {
     background: solid var(--pulse-color-page-background);
     padding: 3rem;
     border-bottom: solid var(--pulse-color-card-background);
 }
 
-ul  {
+ul {
     list-style-type: none;
 }
 
-.navbar{
+.navbar {
     display: flex;
     color: var(--pulse-color-headings);
     background-color: var(--pulse-color-page-background);
     font-size: smaller;
-    font-weight:700;
+    font-weight: 700;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,9 +43,10 @@ ul  {
     padding-top: 20px;
     padding-left: 60px;
     padding-right: 60px;
-    
+
 
 }
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -55,39 +56,39 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav ul li{
+nav ul li {
     padding: 8px;
 }
 
 
 
 nav ul li a {
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
     border: 2px solid transparent;
-    padding:5px 10px;
+    padding: 5px 10px;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     text-decoration: none;
     color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
 }
 
-nav ul li a:active{
+nav ul li a:active {
     color: #080c16;
 }
 
-.active{
+.active {
     color: #080c16;
 }
 
-h1{
+h1 {
     text-align: center;
     font-weight: 800;
 }
 
-h2{
+h2 {
     text-align: center;
     font-size: 0.75rem;
     font-weight: 400;
@@ -96,12 +97,12 @@ h2{
 
 }
 
-p{
+p {
     padding: 0rem;
     margin: 0rem;
 }
 
-.container{
+.card-container {
     display: flex;
     align-items: center;
     font-size: 1rem;
@@ -129,13 +130,13 @@ p{
     padding-left: 15px;
 }
 
-#card1 p{
+#card1 p {
     font-size: 0.75rem;
 }
 
 
-#card2{
-   
+#card2 {
+
     border: 2px solid var(--pulse-color-headings);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -160,7 +161,7 @@ p{
     text-align: center;
     width: 100%;
     margin: 0;
-   
+
 }
 
 #card2 h2 {
@@ -170,9 +171,9 @@ p{
     padding-bottom: 1rem;
     padding-top: 0;
     margin: 0;
- }
+}
 
- #card2 button{
+#card2 button {
     background-color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
     border-style: solid;
@@ -197,21 +198,21 @@ h4.listhead {
 
 
 
-#card2 ul{
+#card2 ul {
     padding-left: 12px;
     padding-right: 16px;
     margin: 0;
     font-size: 0.75rem;
 }
 
-.checkmark li{
+.checkmark li {
     position: relative;
     padding-left: 16px;
     padding-bottom: 1rem;
     left: 1;
 }
 
-.checkmark li::before{
+.checkmark li::before {
     content: '✓';
     color: var(--pulse-color-headings);
     position: absolute;
@@ -224,24 +225,24 @@ h4.listhead {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     text-align: center;
     width: 33%;
 }
 
-#card3 h5{
-    text-align:center;
+#card3 h5 {
+    text-align: center;
     font-size: 0.75rem;
     padding: 1rem;
-    background-color:#eaeef7;
+    background-color: #eaeef7;
     border-bottom: solid var(--pulse-color-card-background);
 }
 
-#card3 h3{
+#card3 h3 {
     color: var(--pulse-color-headings);
 }
 
-#card3 button{
+#card3 button {
     background-color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
     border-style: solid;
@@ -250,7 +251,7 @@ h4.listhead {
     margin-bottom: 1rem;
 }
 
-#card3 ul{
+#card3 ul {
     padding-left: 16px;
     padding-right: 16px;
     margin: 0;
@@ -258,8 +259,7 @@ h4.listhead {
     text-align: left;
 }
 
-.quote
-{
+.quote {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,20 +267,20 @@ h4.listhead {
     margin-left: 3rem;
 }
 
-.quote q{
+.quote q {
     display: inline;
     text-align: center;
     padding-bottom: 1rem;
     margin: 0;
 }
 
-.quote p{
+.quote p {
     color: var(--pulse-color-headings);
     font-size: 0.6rem;
     font-weight: 800;
 }
 
-#faq{
+#faq {
     background-color: white;
     width: 100%;
     padding-left: 10rem;
@@ -288,61 +288,63 @@ h4.listhead {
     padding-top: 3rem;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 0.75rem;
-    
+
 }
 
 
-#faq h3{
+#faq h3 {
     font-size: 2rem;
     font-weight: 900;
     padding-bottom: 1rem;
 }
 
-.grid h4{
+.grid h4 {
     font-size: 0.75rem;
     font-weight: 900;
     padding-right: 2rem;
 }
 
-.grid p{
+.grid p {
     padding-right: 2rem;
     padding-bottom: 2rem;
 }
 
-.box1{
+.box1 {
     order: 1;
 }
 
-.box2{
+.box2 {
     order: 3;
 }
 
-.box3{
-    order:5;
+.box3 {
+    order: 5;
 }
 
-.box4{
-    order:2;
-}
-.box5{
-    order: 4;   
-}
-.box6{
-    order:6;
+.box4 {
+    order: 2;
 }
 
-footer{
-    background-color:  var(--pulse-color-dark);
+.box5 {
+    order: 4;
+}
+
+.box6 {
+    order: 6;
+}
+
+footer {
+    background-color: var(--pulse-color-dark);
     padding-left: 8rem;
     padding-right: 3rem;
 }
 
-.navi{
-    background-color:  var(--pulse-color-dark);
+.navi {
+    background-color: var(--pulse-color-dark);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -352,22 +354,22 @@ footer{
 
 
 
-footer aside{
+footer aside {
     display: flex;
     flex-direction: column;
     width: 50%;
     justify-content: left;
     align-items: flex-start;
     margin-top: 3rem;
-    
+
 }
 
-aside img{
+aside img {
     float: left;
-    
+
 }
 
-footer button{
+footer button {
     background-color: var(--pulse-color-buttons);
     border-color: var(--pulse-color-buttons);
     border-style: solid;
@@ -375,21 +377,21 @@ footer button{
     font-weight: 700;
     padding: 4px 20px;
     margin-bottom: 1rem;
-    margin-left: 2rem;   
+    margin-left: 2rem;
 }
 
-footer button:hover{
+footer button:hover {
     border-style: solid;
     border-color: white;
 }
 
-footer button a{
+footer button a {
     color: black;
 }
 
-footer button a:hover{
+footer button a:hover {
     text-decoration: none;
-        color: white;
+    color: white;
 }
 
 #list {
@@ -404,14 +406,15 @@ footer button a:hover{
 
 }
 
-#list ul li{
+#list ul li {
     padding: 0.3rem;
 }
 
-.first{
+.first {
     color: white;
     font-weight: 600;
 }
+
 #footnote {
     color: white;
     font-size: 0.5rem;
@@ -426,28 +429,27 @@ footer button a:hover{
 }
 
 #footnote a {
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
     border: 2px solid transparent;
-    
+
 }
 
-#footnote a:hover{
+#footnote a:hover {
     text-decoration: underline;
-   
+
 }
 
-#footnote button{
+#footnote button {
     color: white;
     border: solid white;
     font-weight: 700;
     padding: 8px 8px;
     margin-bottom: 1rem;
-    
+
 }
 
-#footnote button a:hover{
+#footnote button a:hover {
     text-decoration: none;
     color: #080c16;
 }
-
