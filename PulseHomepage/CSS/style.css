@@ -8,19 +8,34 @@
 
 }
 
+html{
+    margin: 0;
+    padding: 0;
+}
+    
+.seitenbreite{
+    width: 100%; 
+    max-width: 1000px;
+    margin: 0 auto; 
+    padding: 0 20px;
+    
+}
+
 body {
     font-family: 'Work Sans';
     color: var(--pulse-color-dark);
     background-color: var(--pulse-color-page-background);
     font-size: 14px;
+    margin: 0;
     padding-top: 3rem;
 
 }
 
 #main {
+    padding-top: 20px;
     background: solid var(--pulse-color-page-background);
-    padding: 3rem;
-    border-bottom: solid var(--pulse-color-card-background);
+    /* padding: 3rem; */
+    
 }
 
 ul {
@@ -28,37 +43,65 @@ ul {
 }
 
 .navbar {
-    display: flex;
+    /* display: flex;
+    flex-wrap: wrap;
     color: var(--pulse-color-headings);
     background-color: var(--pulse-color-page-background);
     font-size: smaller;
     font-weight: 700;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; 
     z-index: 1000;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
+    /* width: 100vw; 
+    max-width: 1000px;
     padding-left: 60px;
-    padding-right: 60px;
+    padding-right: 60px; 
+    padding: 20px;
+    width: 100% */
+    display: flex;
+    color: var(--pulse-color-headings);
+    justify-content: center; /* Zentriert den Container */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Deckt den gesamten Bildschirm ab */
+    background-color: var(--pulse-color-page-background);
+    z-index: 1000;
+    padding: 20px 0; /* Vertikales Padding */
 
+}
 
+.innernav{
+    width: 100%;
+    max-width: 1000px; /* Passe dies an die Breite der Seite an */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px; /* Horizontaler Abstand */
+    display: flex;
+    justify-content: space-between; /* Platz zwischen Logo und Navigation */
+    align-items: center;
+    font-size: smaller;
+    font-weight: 700;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
     text-decoration: none;
     color: inherit;
     flex-wrap: wrap;
+    gap: 10px;
+    width: 50%;
 }
 
-nav ul li {
+/* nav ul li {
     padding: 8px;
-}
+} */
 
 
 
@@ -85,10 +128,11 @@ nav ul li a:active {
 
 h1 {
     text-align: center;
+    font-size: 2rem;
     font-weight: 800;
 }
 
-h2 {
+#outside {
     text-align: center;
     font-size: 0.75rem;
     font-weight: 400;
@@ -97,21 +141,27 @@ h2 {
 
 }
 
-p {
+/* p {
     padding: 0rem;
     margin: 0rem;
-}
+} */
 
 .card-container {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    padding: 4rem;
+    /* padding: 4rem; */
+    flex-wrap: wrap;
+    justify-content: center;
+    
+       /* width: 100%; */
 }
 
 #card1 {
-    padding: 3rem;
-    width: 33%;
+    /* padding: 3rem; */
+    flex: 1;
+    overflow: hidden;
+    padding: 1rem;
 }
 
 #card1 h3 {
@@ -127,7 +177,7 @@ p {
 #card1 ul {
     list-style-type: disc;
     font-size: 0.75rem;
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 
 #card1 p {
@@ -147,8 +197,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: white;
+    /* padding: 2rem; */
     padding-bottom: 4rem;
-    width: 33%;
+    /* width: 33%; */
+    flex: 1;
 }
 
 
@@ -161,12 +213,15 @@ p {
     text-align: center;
     width: 100%;
     margin: 0;
+    padding: 0;
 
 }
 
+
 #card2 h2 {
+    text-align: center;
     font-size: 2rem;
-    font-weight: 1000;
+    font-weight: bolder;
     color: var(--pulse-color-headings);
     padding-bottom: 1rem;
     padding-top: 0;
@@ -179,21 +234,38 @@ p {
     border-style: solid;
     font-weight: 700;
     padding: 4px 20px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#card2 button:hover{
+    border-style: solid;
+    border-color: var(--pulse-color-headings);
+}
+
+#card2 button a{
+    color: black;
+    text-decoration: none;
+}
+
+#card2 button a:hover{
+    text-decoration: none;
+    color: white;
 }
 
 h4.card {
     text-align: center;
     font-weight: 400;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     border: none;
+    padding: 0;
+    margin-top: 0;
 }
 
 h4.listhead {
     font-size: x-small;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 0.5rem;
 }
 
 
@@ -227,7 +299,8 @@ h4.listhead {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 33%;
+    /* width: 33%; */
+    flex: 1;
 }
 
 #card3 h5 {
@@ -236,10 +309,14 @@ h4.listhead {
     padding: 1rem;
     background-color: #eaeef7;
     border-bottom: solid var(--pulse-color-card-background);
+    margin: 0;
 }
 
 #card3 h3 {
     color: var(--pulse-color-headings);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 0;
 }
 
 #card3 button {
@@ -249,6 +326,21 @@ h4.listhead {
     font-weight: 700;
     padding: 4px 20px;
     margin-bottom: 1rem;
+}
+
+#card3 button:hover{
+    border-style: solid;
+    border-color: var(--pulse-color-headings);
+}
+
+#card3 button a{
+    color: black;
+    text-decoration: none;
+}
+
+#card3 button a:hover{
+    text-decoration: none;
+    color: white;
 }
 
 #card3 ul {
@@ -267,6 +359,9 @@ h4.listhead {
     margin-left: 3rem;
 }
 
+.quote img{
+    margin-top: 3rem;
+}
 .quote q {
     display: inline;
     text-align: center;
@@ -278,39 +373,55 @@ h4.listhead {
     color: var(--pulse-color-headings);
     font-size: 0.6rem;
     font-weight: 800;
+    padding-bottom: 3rem;
 }
 
 #faq {
     background-color: white;
-    width: 100%;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    padding-top: 3rem;
+    width: 100vw;
+    /* padding-left: 10rem;
+    padding-right: 10rem; */
+    border-top: solid var(--pulse-color-card-background);
+    max-width: 1000vw;
+    margin: 0 auto; 
+    padding: 10px 20px;
 }
 
 .grid {
+    width: 100%;
+    max-width: 1000px; /* Passe dies an die Breite der Seite an */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
     font-size: 0.75rem;
-
+    padding: 0;
+    gap: 4px;
+    /* padding: 0 10rem; */
+    margin: 0 auto; /* Zentriert den Container */
 }
 
 
 #faq h3 {
     font-size: 2rem;
     font-weight: 900;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 1000px; /* Passe dies an die Breite der Seite an */
+    margin: 0 auto; /* Zentriert den Container */
+    
 }
 
 .grid h4 {
     font-size: 0.75rem;
     font-weight: 900;
-    padding-right: 2rem;
+    padding: 0;
+    margin: 0;
+    /* padding-right: 2rem; */
 }
 
-.grid p {
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+.grid div{
+    margin-right: 1rem;
 }
 
 .box1 {
@@ -339,16 +450,24 @@ h4.listhead {
 
 footer {
     background-color: var(--pulse-color-dark);
-    padding-left: 8rem;
-    padding-right: 3rem;
+    width: 100vw;
+    max-width: 1000vw;
+    margin: 0 auto; 
+    /* padding: 10px 20px; */
+    /* padding-left: 8rem;
+    padding-right: 3rem; */
 }
 
 .navi {
     background-color: var(--pulse-color-dark);
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    align-items: center;
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    max-width: 1000px; /* Passe dies an die Breite der Seite an */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px;
 }
 
 
@@ -357,7 +476,7 @@ footer {
 footer aside {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    flex: 1;
     justify-content: left;
     align-items: flex-start;
     margin-top: 3rem;
@@ -387,6 +506,7 @@ footer button:hover {
 
 footer button a {
     color: black;
+    text-decoration: none;
 }
 
 footer button a:hover {
@@ -399,11 +519,15 @@ footer button a:hover {
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--pulse-color-headings);
-    width: 50%;
+    flex: 1;
     display: flex;
     margin-top: 3rem;
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
 
+}
+
+#list ul{
+    flex: 1;
 }
 
 #list ul li {
@@ -418,14 +542,16 @@ footer button a:hover {
 #footnote {
     color: white;
     font-size: 0.5rem;
-    font-weight: 100;
+    /* font-weight: 100; */
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    padding-top: 2rem;
     width: 100%;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    padding: 0rem;
+    max-width: 1000px; /* Passe dies an die Breite der Seite an */
+    margin: 0 auto; /* Zentriert den Container */
+    padding-left: 4rem;
+    
+   
 }
 
 #footnote a {
@@ -453,3 +579,4 @@ footer button a:hover {
     text-decoration: none;
     color: #080c16;
 }
+
