@@ -1,0 +1,56 @@
+:root{
+    --background-color: #11151C;
+}
+
+body{
+    font-family: 'Roboto Slab', sans-serif;
+    color: white;
+    background-color: var(--background-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+
+}
+
+h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: rgb(23, 109, 156);
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    background-color: rgb(23, 109, 156);
+}
+
+#result {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.prime {
+    color: green;
+}
+
+.no-prime {
+    color: red;
+}
+
