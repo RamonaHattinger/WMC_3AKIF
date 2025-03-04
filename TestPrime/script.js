@@ -12,8 +12,8 @@ function isPrime(number) {
 }
 
 function checkPrime() {
-    let number = document.getElementById('number').value;
-    let resultElement = document.getElementById('result');
+    const number = document.getElementById('number').value;
+    const resultElement = document.getElementById('result');
     
         if (number === "" || isNaN(number)) {
         resultElement.textContent = "What the fuck, you're  not even a number!";
