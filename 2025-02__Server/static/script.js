@@ -26,6 +26,12 @@ function checkPrime() {
         if (isPrime(number)) {
             resultElement.textContent = "Yeah baby, you're prime!";
             resultElement.className = "prime";
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+              });
+        
         } 
         else {
             resultElement.textContent = "Meh, ...";
