@@ -1,5 +1,5 @@
 
-/* for(let i=1;i<=100;i++){
+   for(let i=1;i<=100;i++){
     if(i%3===0 && i%5===0){
         console.log('FizzBuzz');
     }
@@ -18,10 +18,10 @@
     else{
         console.log(i);
     }
-} */
+} 
 
 
-for(let i=1; ; i++){
+/*for(let i=1; ; i++){
     let output = '';
     if(i%3===0){
         output += 'Fizz';}
@@ -43,4 +43,4 @@ for(let i=1; ; i++){
     if(output === 'FizzBuzzWhizzBang'){
         break;
     }
-}
+}*/

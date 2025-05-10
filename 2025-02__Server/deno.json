@@ -6,5 +6,16 @@
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
     "hono": "jsr:@hono/hono"
-  }
+  },
+"configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Deno Debug",
+      "program": "${workspaceFolder}/main.js",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": ["run", "--inspect", "--allow-all"],
+      "attachSimplePort": 9229
+    }
+]
 }
