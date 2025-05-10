@@ -24,4 +24,4 @@ app.get(
 // serve all other static files
 app.get("*", serveStatic({ root: "./static" }));
 
-Deno.serve(app.fetch);
+Deno.serve({ port: 8000 }, app.fetch);
