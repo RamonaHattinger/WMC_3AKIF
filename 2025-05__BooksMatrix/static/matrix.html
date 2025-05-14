@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph Matrix Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/matrix.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="matrix.html">Matrix</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Matrix Analysis</h1>
+    
+    <div class="matrix-input-row">
+      <div class="file-upload">
+        <label class="file-upload-label">
+          Upload file
+          <input type="file" id="csvInput" accept=".csv">
+        </label>
+        <span id="file-name">.csv</span>
+      </div>
+      <button id="generateRandom" class="sort-select">Generate Random Matrix</button>
+    </div>
+
+    <div class="matrix-container">
+      <h3 class="matrix-heading">Matrix</h3>
+      <pre id="matrixOutput" class="matrix-display"></pre>
+    </div>
+
+    <div class="matrix-button-row">
+      <button id="calculateBtn" class="sort-select">Calculate</button>
+      <button id="resetBtn" class="sort-select">Reset</button>
+    </div>
+
+    <div id="resultOutput" class="results-container"></div>
+  </main>
+
+  <footer>
+    <p id="hypno">🌀</p>
+  </footer>
+</body>
+</html>

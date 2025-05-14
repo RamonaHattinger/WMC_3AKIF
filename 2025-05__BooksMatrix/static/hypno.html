@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+          rel="stylesheet" 
+          referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: black;
+    }
+
+    body {
+      background-image: url('https://images.steamusercontent.com/ugc/199680527235254052/F4EC40680C0C04B5CDC09731229E4C06FE69B478/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Roboto Slab', sans-serif;
+    }
+
+    .pendulum {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-weight: bold;
+      color: #66ff66;
+      animation: swing 4s ease-in-out infinite alternate;
+      white-space: nowrap;
+      pointer-events: none;
+      text-shadow: 0 0 10px #66ff66;
+    }
+
+    @keyframes swing {
+      0%   { transform: translate(-50%, -50%) translateX(-40px); }
+      50%  { transform: translate(-50%, -50%) translateX(0); }
+      100% { transform: translate(-50%, -50%) translateX(40px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="pendulum">No More Homework!</div>
+
+  <!--There is no way out ... -->
+  
+</body>
+</html>
