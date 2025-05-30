@@ -39,7 +39,19 @@ fileInput.addEventListener("change", async (event) => {
 
   fileNameDisplay.textContent = file.name;
   const text = await file.text();
-  matrix = text.trim().split("\n").map(row => row.split(",").map(Number));
+  
+  const firstLine = text.trim().split("\n")[0];
+  const delimiter = firstLine.includes(";") ? ";" : ",";
+
+  matrix = text
+    .trim()
+    .split("\n")
+    .map(row =>
+      row
+        .split(delimiter)
+        .map(cell => Number(cell.trim()))
+    );
+
   displayMatrix(matrix);
 });
 

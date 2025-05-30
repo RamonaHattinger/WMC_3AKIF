@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const stored = await fetch("/api/wishlist").then(res => res.json());
   stored.forEach(book => createWishlistItem(book));
 
-  // 🔍 Live-Suche OpenLibrary
+  // Live-Suche OpenLibrary
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.trim();
     resetButton.style.display = query ? "block" : "none";

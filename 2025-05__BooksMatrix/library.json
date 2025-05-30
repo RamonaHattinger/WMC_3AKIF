@@ -2,13 +2,25 @@
   {
     "title": "Naturalis historia",
     "author": "Pliny the Elder",
+    "rating": 4,
+    "note": "jlhlahld"
+  },
+  {
+    "title": "The Importance of Being Earnest",
+    "author": "Oscar Wilde",
+    "rating": 4,
+    "note": "dasdfsd"
+  },
+  {
+    "title": "Philip Dru",
+    "author": "Edward Mandell House",
     "rating": 3,
     "note": ""
   },
   {
-    "title": "Naturalis historia",
-    "author": "Pliny the Elder",
+    "title": "Mishneh Torah (Codification of Talmudic laws)",
+    "author": "Moses Maimonides",
     "rating": 4,
-    "note": "jlhlahld"
+    "note": "dlasjdlk"
   }
 ]
