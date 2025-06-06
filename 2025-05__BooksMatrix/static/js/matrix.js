@@ -66,16 +66,46 @@ resetBtn.addEventListener("click", () => {
 });
 
 // Here the magic begins:
-//Calculate!!!
+
+// Calculate!!!
 calculateBtn.addEventListener("click", () => {
   if (!matrix.length) return;
 
-  const dist = dijkstraAllPairs(matrix);
-  const path = dist.map(row => row.map(v => (v < Infinity ? 1 : 0)));
+  const n = matrix.length;
 
-  // Exzentrizitäten
-  const eccentricities = dist.map(row => {
-    const reachable = row.filter(v => v < Infinity && v > 0);
+  // Potenzmatrizen A^1 bis A^(n-1) berechnen
+  const powerMatrices = [];
+  let currentMatrix = matrix.map(row => row.slice()); // A^1
+  powerMatrices.push(currentMatrix);
+
+  for (let i = 1; i < n - 1; i++) {
+    currentMatrix = multiplyMatrix(currentMatrix, matrix);
+    powerMatrices.push(currentMatrix);
+  }
+
+  // Distanzmatrix aus Potenzmatrizen
+  const distMatrix = Array.from({ length: n }, () => Array(n).fill(Infinity));
+  for (let i = 0; i < n; i++) distMatrix[i][i] = 0; // Diagonale = 0
+
+  for (let k = 0; k < powerMatrices.length; k++) {
+    const power = powerMatrices[k];
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        if (i !== j && power[i][j] > 0 && distMatrix[i][j] === Infinity) {
+          distMatrix[i][j] = k + 1; // Erste Potenz mit Pfad => Distanz
+        }
+      }
+    }
+  }
+
+  // Pfadmatrix aus Distanzmatrix
+  const pathMatrix = distMatrix.map(row =>
+    row.map(v => (v < Infinity ? 1 : 0))
+  );
+
+  // Exzentrizitäten berechnen
+  const eccentricities = distMatrix.map(row => {
+    const reachable = row.filter(v => v < Infinity);
     return reachable.length ? Math.max(...reachable) : null;
   });
 
@@ -84,34 +114,61 @@ calculateBtn.addEventListener("click", () => {
   const radius = validEcc.length ? Math.min(...validEcc) : "–";
   const diameter = validEcc.length ? Math.max(...validEcc) : "–";
 
-  // Potenzmatrizen A^2 bis A^5 berechnen
-  const power2 = multiplyMatrix(matrix, matrix);
-  const power3 = multiplyMatrix(power2, matrix);
-  const power4 = multiplyMatrix(power3, matrix);
-  const power5 = multiplyMatrix(power4, matrix);
+  // Anzahl zusammenhängender Komponenten per DFS
+  const componentCount = countConnectedComponents(matrix);
 
-  // Formatiert eine Matrix für die Anzeige (∞ statt Infinity) --> noch notwendig?
-  const formatMatrix = m =>
-    m.map(row => row.map(v => (v === Infinity ? "∞" : v)).join(", ")).join("\n");
+  // Zentrum: alle Knoten mit minimaler Exzentrizität
+  const minEcc = Math.min(...validEcc);
+  const centreNodes = eccentricities
+    .map((e, i) => (e === minEcc ? i : null))
+    .filter(i => i !== null);
 
-  // Ergebnis-Ausgabe
-  const resultHTML = `
-    <div class="result-row"><span>Eccentricities:</span><span>${eccentricities.map(e => e ?? "–").join(", ")}</span></div>
-    <div class="result-row"><span>Radius:</span><span>${radius}</span></div>
-    <div class="result-row"><span>Diameter:</span><span>${diameter}</span></div>
-    <div class="result-row"><span>Dijkstra Distance Matrix:</span><pre>${formatMatrix(dist)}</pre></div>
-    <div class="result-row"><span>Path Matrix:</span><pre>${path.map(r => r.join(", ")).join("\n")}</pre></div>
-    <div class="result-row"><span>Power Matrix 2:</span><pre>${power2.map(r => r.join(", ")).join("\n")}</pre></div>
-    <div class="result-row"><span>Power Matrix 3:</span><pre>${power3.map(r => r.join(", ")).join("\n")}</pre></div>
-    <div class="result-row"><span>Power Matrix 4:</span><pre>${power4.map(r => r.join(", ")).join("\n")}</pre></div>
-    <div class="result-row"><span>Power Matrix 5:</span><pre>${power5.map(r => r.join(", ")).join("\n")}</pre></div>
+// D y n a m i s c h e  HTML-Erzeugung für Potenzmatrizen mit Formatierung
+let powersHTML = "";
+if (powerMatrices.length) {
+  powersHTML += `<h3 class="matrix-heading">Power Matrices</h3>`;
+  powersHTML += powerMatrices.map((pm, index) => {
+    const maxLength = Math.max(...pm.flat().map(v => String(v).length));
+    const prettyMatrix = pm.map(row =>
+      row.map(num => String(num).padStart(maxLength, " ")).join(", ")
+    ).join("\n");
+
+    return `
+      <div class="result-row">
+        <span>Power Matrix ${index + 1}:</span>
+        <pre>${prettyMatrix}</pre>
+      </div>
+    `;
+  }).join("");
+
+  powersHTML += `
+    <div class="result-row">
+      <span style="font-style: italic;">All paths found.</span>
+    </div>
   `;
-  resultOutput.innerHTML = resultHTML;
+}
+
+// Ergebnisse in HTML ausgeben
+const resultHTML = `
+  <div class="result-row"><span>Eccentricities:</span><span>${eccentricities.map(e => e ?? "–").join(", ")}</span></div>
+  <div class="result-row"><span>Radius:</span><span>${radius}</span></div>
+  <div class="result-row"><span>Diameter:</span><span>${diameter}</span></div>
+  <div class="result-row"><span>Connected Components:</span><span>${componentCount}</span></div>
+  <div class="result-row"><span>Graph Centre:</span><span>${centreNodes.join(", ")}</span></div>
+  <div class="result-row"><span>Distance Matrix:</span><pre>${distMatrix.map(r => r.map(v => v === Infinity ? "∞" : v).join(", ")).join("\n")}</pre></div>
+  <div class="result-row"><span>Path Matrix:</span><pre>${pathMatrix.map(r => r.join(", ")).join("\n")}</pre></div>
+
+  ${powersHTML}
+
+  <div class="so-long-message">
+    <a href="python.html">So long and thanks for all the fish!</a>
+  </div>
+`;
+
+resultOutput.innerHTML = resultHTML;
+
 });
 
-
-
-//here the work begins
 // Multipliziert zwei Matrizen 
 function multiplyMatrix(a, b) {
   const n = a.length;
@@ -126,43 +183,30 @@ function multiplyMatrix(a, b) {
   return result;
 }
 
-// Dijkstra für alle Startknoten
-function dijkstraAllPairs(adjMatrix) {
+// Zählt die Anzahl zusammenhängender Komponenten per DFS
+function countConnectedComponents(adjMatrix) {
   const n = adjMatrix.length;
-  const distMatrix = Array.from({ length: n }, () => Array(n).fill(Infinity));
+  const visited = new Array(n).fill(false);
+  let components = 0;
 
-  function dijkstra(start) {
-    const distances = Array(n).fill(Infinity);
-    const visited = Array(n).fill(false);
-    distances[start] = 0;
-
-    for (let i = 0; i < n; i++) {
-      let u = -1;
-      for (let j = 0; j < n; j++) {
-        if (!visited[j] && (u === -1 || distances[j] < distances[u])) {
-          u = j;
-        }
-      }
-      if (u === -1 || distances[u] === Infinity) break;
-      visited[u] = true;
-
-      for (let v = 0; v < n; v++) {
-        if (adjMatrix[u][v] && distances[u] + 1 < distances[v]) {
-          distances[v] = distances[u] + 1;
-        }
+  function dfs(node) {
+    visited[node] = true;
+    for (let neighbor = 0; neighbor < n; neighbor++) {
+      if (adjMatrix[node][neighbor] && !visited[neighbor]) {
+        dfs(neighbor);
       }
     }
-
-    return distances;
   }
 
   for (let i = 0; i < n; i++) {
-    distMatrix[i] = dijkstra(i);
+    if (!visited[i]) {
+      dfs(i);
+      components++;
+    }
   }
 
-  return distMatrix;
+  return components;
 }
-
 
 // Aktiviert NavBar
 document.querySelectorAll("nav a").forEach(link => {

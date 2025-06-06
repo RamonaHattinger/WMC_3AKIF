@@ -51,7 +51,6 @@ nav ul li a.active {
   font-weight: bold;
 }
 
-
 main {
     padding-top: 100px; 
 }
@@ -74,14 +73,12 @@ h2 {
     position: relative;
 }
 
-
 .search-wrapper {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 #searchInput {
     padding: 10px 15px;
@@ -90,7 +87,6 @@ h2 {
     border-radius: 15px;
     font-size: 1rem;
 }
-
 
 #resetButton {
     position: absolute;
@@ -192,8 +188,6 @@ h2 {
     align-items: center;
 }
 
-
-
 .delete-button {
     background: none;
     border: none;
@@ -230,11 +224,9 @@ h2 {
     opacity: 1;
 }
 
-
 .add-button:hover {
     opacity: 1;
 }
-
 
 .modal {
     display: none;
@@ -299,17 +291,12 @@ textarea {
     background-color: #165a72;
 }
 
-
 footer {
     position: fixed;
     bottom: 10px;
     left: 10px;
     font-size: 24px;
 }
-
-
-
-
 
 
 
@@ -326,7 +313,6 @@ footer {
     width: 90%;
     max-width: 700px;
 }
-
 
 #sortSelect {
     background-color: var(--second-color);
@@ -346,8 +332,6 @@ footer {
     border-color: var(--text-color2);
     opacity: 1;
 }
-
-
 
 #libraryList {
     list-style: none;
@@ -369,9 +353,8 @@ footer {
 .library-book-title {
     font-weight: bold;
     font-size: 1.1rem;
-    color: var(--accent-green); /* deine Hauptfarbe */
+    color: var(--accent-green); 
 }
-
 
 .library-book-meta {
     font-style: italic;
@@ -410,9 +393,6 @@ footer {
 
 
 /*Matrix*/
-
-
-
 .matrix-display {
   background-color: var(--second-color);
   color: white;
@@ -450,9 +430,6 @@ input[type="file"] {
   justify-content: center;
   margin-top: 20px;
 }
-
-
-
 
 .file-upload {
   position: relative;
@@ -495,7 +472,6 @@ input[type="file"] {
   opacity: 0.8;
 }
 
-
 button.sort-select,
 button {
   background-color: var(--second-color);
@@ -520,7 +496,6 @@ button:hover {
   color: var(--accent-green);
   font-weight: bold;
 }
-
 
 .matrix-input-row {
   display: flex;
@@ -547,18 +522,30 @@ button:hover {
 
 
 
-
 /*Hypno*/
-
-
-
 #hypno {
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 0.7;
   }
   
-  #hypno:hover {
+#hypno:hover {
     opacity: 1;
   }
   
+/*SoLong*/
+.so-long-message {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.so-long-message a {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--text-color2);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+

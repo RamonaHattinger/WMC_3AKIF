@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  console.log("Library JS active"); //Debugger
+  console.log("Library JS active"); // Debug-Ausgabe
 
   const list = document.getElementById("libraryList");
   const sortSelect = document.getElementById("sortSelect");
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   let currentEditIndex = null;
   let tempBook = {};
 
+  // Anzeige aller Bücher in der Bibliothek
   function renderLibrary(sortedBooks) {
     list.innerHTML = "";
 
@@ -81,10 +82,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       wrapper.appendChild(buttonGroup);
       li.appendChild(wrapper);
       list.appendChild(li);
-
     });
   }
 
+  // Sortierung nach Auswahlfeld
   function sortBooks(by) {
     const sorted = [...books];
 
@@ -96,13 +97,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         sorted.sort((a, b) => a.author.localeCompare(b.author));
         break;
       case "rating":
-        sorted.sort((a, b) => b.rating - a.rating);
+        sorted.sort((a, b) => b.rating - a.rating); // absteigend
         break;
     }
 
     renderLibrary(sorted);
   }
 
+  // Bewertungs-/Bearbeitungs-Modal öffnen
   function openEditModal(book, index) {
     tempBook = { ...book };
     currentEditIndex = index;
@@ -132,16 +134,18 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   document.getElementById("cancelRating").addEventListener("click", closeRatingModal);
 
+  // Umgehen von Event-Löschung bei Modal-Reload
   const originalSaveBtn = document.getElementById("saveRating");
   if (!originalSaveBtn) {
-    console.error("saveRating button not found in DOM"); 
+    console.error("saveRating button not found in DOM");
     return;
   }
-  console.log("Save button found:", originalSaveBtn); //debugger
+  console.log("Save button found:", originalSaveBtn);
 
   const newSaveBtn = originalSaveBtn.cloneNode(true);
   originalSaveBtn.parentNode.replaceChild(newSaveBtn, originalSaveBtn);
 
+  // Speichern der Bearbeitung oder Bewertung
   newSaveBtn.addEventListener("click", async () => {
     console.log("Save in library triggered");
     tempBook.note = document.getElementById("noteInput").value;
@@ -162,6 +166,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     closeRatingModal();
   });
 
+  // Auswahländerung im Dropdown löst Sortierung aus
   sortSelect.addEventListener("change", () => {
     sortBooks(sortSelect.value);
   });
@@ -169,6 +174,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   sortBooks("title");
 });
 
+// Bibliothek zurücksetzen
 document.getElementById("resetLibrary").addEventListener("click", async () => {
   if (confirm("Are you sure you want to reset your entire library?")) {
     await fetch("/api/library-reset", { method: "POST" });
@@ -176,20 +182,12 @@ document.getElementById("resetLibrary").addEventListener("click", async () => {
   }
 });
 
-
-
-// Aktiviert NavBar
-
+// Navigation aktivieren
 document.querySelectorAll("nav a").forEach(link => {
   if (link.href.includes(location.pathname)) {
     link.classList.add("active");
   }
 });
-
-
-
-
-
 
 
 document.getElementById("hypno").addEventListener("click", () => {

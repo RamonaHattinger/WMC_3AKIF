@@ -1,26 +1,38 @@
 [
   {
-    "title": "Naturalis historia",
-    "author": "Pliny the Elder",
-    "rating": 4,
-    "note": "jlhlahld"
+    "title": "The Hitch Hiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "rating": 5,
+    "note": "Just perfect!"
   },
   {
-    "title": "The Importance of Being Earnest",
-    "author": "Oscar Wilde",
-    "rating": 4,
-    "note": "dasdfsd"
+    "title": "Nineteen Eighty-Four",
+    "author": "George Orwell",
+    "rating": 5,
+    "note": "Mind blowing"
   },
   {
-    "title": "Philip Dru",
-    "author": "Edward Mandell House",
+    "title": "A short history of nearly everything",
+    "author": "Bill Bryson",
+    "rating": 5,
+    "note": "Has nearly everything"
+  },
+  {
+    "title": "Momo",
+    "author": "Michael Ende",
+    "rating": 5,
+    "note": "<3"
+  },
+  {
+    "title": "How to Kill Your Family",
+    "author": "Bella Mackie",
     "rating": 3,
     "note": ""
   },
   {
-    "title": "Mishneh Torah (Codification of Talmudic laws)",
-    "author": "Moses Maimonides",
-    "rating": 4,
-    "note": "dlasjdlk"
+    "title": "How to Kill Your Family",
+    "author": "Bella Mackie",
+    "rating": 2,
+    "note": ""
   }
 ]
